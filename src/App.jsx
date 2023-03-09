@@ -20,6 +20,9 @@ class App extends Component {
         this.drone = new window.Scaledrone("YfeyvT4sdh9Mq1Xs", {
             data: this.state.member,
         });
+    }
+
+    componentDidMount() {
         this.drone.on("open", (error) => {
             if (error) {
                 return console.error(error);
@@ -33,7 +36,8 @@ class App extends Component {
 
         room.on("data", (data, member) => {
             const messages = this.state.messages;
-            messages.push({ member, text: data });
+            const timestamp = new Date().toISOString();
+            messages.push({ member, text: data, timestamp });
             this.setState({ messages });
         });
     }

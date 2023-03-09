@@ -10,10 +10,12 @@
     overflow: visible;
     width: 100%;
     text-align: center;
+    text-decoration:underline;
     color: black;
   }
   
   .Messages-list {
+    position: relative;
     padding: 20px 0;
     max-width: 900px;
     width: 100%;
